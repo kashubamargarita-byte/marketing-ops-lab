@@ -16,7 +16,7 @@
 | Email & CRM | Email Campaign ROI |
 | Content & SEO | Organic Traffic Value |
 | Growth & Retention | Churn & Retention Revenue Impact |
-| Competitive Intel | Competitor Monitoring Priority Score |
+| Competitive Intel | Competitor Watchlist Tracker |
 | Social | Posting Cadence & SSI Growth Planner |
 | CRO & Testing | A/B Test Significance & Sample Size |
 
