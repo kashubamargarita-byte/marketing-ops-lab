@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A/B Test Significance &amp; Sample Size Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Calculate the sample size needed per variant for a statistically significant A/B test, based on baseline rate and minimum detectable effect.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="A/B Test Significance &amp; Sample Size Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Calculate the sample size needed per variant for a statistically significant A/B test, based on baseline rate and minimum detectable effect.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html#app", "name": "A/B Test Significance &amp; Sample Size Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate the sample size needed per variant for a statistically significant A/B test, based on baseline rate and minimum detectable effect."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "A/B Test Significance &amp; Sample Size Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "What does 'minimum detectable effect' mean?", "acceptedAnswer": {"@type": "Answer", "text": "It's the smallest relative improvement over baseline you want the test to reliably detect. A smaller MDE (e.g. 5% instead of 20%) requires a much larger sample size — you're asking the test to notice a subtler difference."}}, {"@type": "Question", "name": "Why 95% significance and 80% power?", "acceptedAnswer": {"@type": "Answer", "text": "These are the most widely used industry-standard defaults (5% chance of a false positive, 80% chance of detecting a true effect if it exists) — this calculator fixes them for simplicity."}}, {"@type": "Question", "name": "What if I don't have enough traffic to reach this sample size?", "acceptedAnswer": {"@type": "Answer", "text": "Either test a bigger, bolder change (larger expected effect needs a smaller sample), run the test longer, or accept a wider confidence interval and treat results as directional rather than conclusive."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / A/B Test Significance &amp; Sample Size Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">🧪</div>
+    <span class="cat-label">CRO &amp; Testing</span>
+    <h1>A/B Test Significance &amp; Sample Size Calculator</h1>
+    <p class="lede">Calling a test 'significant' after 200 visitors is one of the most common CRO mistakes. This tool calculates the sample size you need per variant at 95% significance and 80% power before you trust a result.</p>
+    <div class="formula">n ≈ ((Z_α/2 + Z_β)² × 2p(1−p)) / (p × MDE)²</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="baseline">Baseline conversion rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="baseline" value="5" step="0.1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="mde">Minimum detectable effect (relative, %)</label>
+      <div class="input-wrap">
+        <input type="number" id="mde" value="20" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Required sample size per variant</span>
+      <span class="value" id="sampleSize">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Total visitors needed (2 variants)</span>
+      <span class="value" id="totalSample">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>What does 'minimum detectable effect' mean?</summary>
+      <div class="faq-a">It's the smallest relative improvement over baseline you want the test to reliably detect. A smaller MDE (e.g. 5% instead of 20%) requires a much larger sample size — you're asking the test to notice a subtler difference.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Why 95% significance and 80% power?</summary>
+      <div class="faq-a">These are the most widely used industry-standard defaults (5% chance of a false positive, 80% chance of detecting a true effect if it exists) — this calculator fixes them for simplicity.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What if I don't have enough traffic to reach this sample size?</summary>
+      <div class="faq-a">Either test a bigger, bolder change (larger expected effect needs a smaller sample), run the test longer, or accept a wider confidence interval and treat results as directional rather than conclusive.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="email-campaign-roi-calculator.html">Email Campaign ROI Calculator →</a><a href="organic-traffic-value-calculator.html">Organic Traffic Value Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const p = num('baseline')/100, mdeRel = num('mde')/100;
+      const delta = p * mdeRel;
+      const zAlpha = 1.96, zBeta = 0.84; // 95% significance, 80% power
+      const n = delta > 0 ? ((zAlpha+zBeta)**2 * 2*p*(1-p)) / (delta**2) : 0;
+      set('sampleSize', Math.ceil(n).toLocaleString());
+      set('totalSample', Math.ceil(n*2).toLocaleString());
+    
+}
+calculate();
+</script>
+</body>
+</html>

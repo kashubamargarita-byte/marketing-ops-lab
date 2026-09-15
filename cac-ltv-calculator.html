@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAC &amp; LTV Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Calculate Customer Acquisition Cost, Lifetime Value, and your LTV:CAC ratio for B2B and SaaS businesses.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="CAC &amp; LTV Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Calculate Customer Acquisition Cost, Lifetime Value, and your LTV:CAC ratio for B2B and SaaS businesses.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html#app", "name": "CAC &amp; LTV Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate Customer Acquisition Cost, Lifetime Value, and your LTV:CAC ratio for B2B and SaaS businesses."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "CAC &amp; LTV Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "Why is 3:1 the benchmark for LTV:CAC?", "acceptedAnswer": {"@type": "Answer", "text": "It's a widely cited rule of thumb (popularized in SaaS/VC circles) implying enough margin to cover acquisition, cost of service, and still be profitable. It's directional, not a law — capital-efficient or early-stage companies sometimes target higher."}}, {"@type": "Question", "name": "Should CAC include only sales & marketing spend, or fully-loaded costs?", "acceptedAnswer": {"@type": "Answer", "text": "Fully-loaded CAC (all sales + marketing spend divided by new customers in the period, including salaries and tools) gives the most honest picture, though many teams start with a simpler paid-spend-only version."}}, {"@type": "Question", "name": "Why use churn to calculate lifetime instead of just asking average tenure?", "acceptedAnswer": {"@type": "Answer", "text": "Churn-based lifetime (1/churn rate) is more reliable early on when you don't yet have years of tenure data to average, and it updates automatically as retention improves or worsens."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / CAC &amp; LTV Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">💰</div>
+    <span class="cat-label">Unit Economics</span>
+    <h1>CAC &amp; LTV Calculator</h1>
+    <p class="lede">LTV:CAC is one of the most quoted — and most misused — SaaS/B2B metrics. This calculator uses monthly churn to derive customer lifetime so the ratio reflects your real retention, not a guess.</p>
+    <div class="formula">LTV = ARPA × Gross Margin% × (1 / Monthly Churn%) · Ratio = LTV / CAC</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="cac">Customer Acquisition Cost ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="cac" value="4000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="arpa">Average revenue per account, monthly ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="arpa" value="500" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="grossMargin">Gross margin (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="grossMargin" value="75" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="churn">Monthly customer churn rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="churn" value="2" step="0.1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Avg. customer lifetime</span>
+      <span class="value" id="lifetime">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">LTV</span>
+      <span class="value" id="ltv">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">LTV : CAC ratio</span>
+      <span class="value" id="ratio">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Verdict</span>
+      <span class="value" id="verdict">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Why is 3:1 the benchmark for LTV:CAC?</summary>
+      <div class="faq-a">It's a widely cited rule of thumb (popularized in SaaS/VC circles) implying enough margin to cover acquisition, cost of service, and still be profitable. It's directional, not a law — capital-efficient or early-stage companies sometimes target higher.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should CAC include only sales & marketing spend, or fully-loaded costs?</summary>
+      <div class="faq-a">Fully-loaded CAC (all sales + marketing spend divided by new customers in the period, including salaries and tools) gives the most honest picture, though many teams start with a simpler paid-spend-only version.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Why use churn to calculate lifetime instead of just asking average tenure?</summary>
+      <div class="faq-a">Churn-based lifetime (1/churn rate) is more reliable early on when you don't yet have years of tenure data to average, and it updates automatically as retention improves or worsens.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="cac-payback-period-calculator.html">CAC Payback Period Calculator →</a><a href="churn-retention-revenue-calculator.html">Churn &amp; Retention Revenue Impact Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const cac = num('cac'), arpa = num('arpa'), gm = num('grossMargin')/100, churn = num('churn')/100;
+      const lifetimeMonths = churn > 0 ? 1/churn : Infinity;
+      const ltv = arpa * gm * lifetimeMonths;
+      const ratio = ltv / cac;
+      set('lifetime', isFinite(lifetimeMonths) ? lifetimeMonths.toFixed(1) + ' months' : 'n/a (0% churn)');
+      set('ltv', money(ltv));
+      set('ratio', ratio.toFixed(1) + ':1');
+      set('verdict', ratio >= 3 ? '✅ Healthy — at or above the common 3:1 benchmark' : ratio >= 1 ? '⚠️ Below the 3:1 benchmark — acquisition is expensive relative to value' : '🚩 Losing money per customer over their lifetime');
+    
+}
+calculate();
+</script>
+</body>
+</html>

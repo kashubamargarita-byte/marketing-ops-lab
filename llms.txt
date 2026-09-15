@@ -1,0 +1,19 @@
+# Marketing Ops Lab
+
+> Free, open-source, no-signup B2B marketing calculators for CMOs, growth, and RevOps teams. Every tool runs client-side (no data collection).
+
+## Tools
+- [ROAS &amp; Break-Even Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html): Calculate Return on Ad Spend and the exact break-even ROAS you need to stay profitable after costs.
+- [CPL &amp; Max CPC Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html): Reverse-engineer the maximum CPL and CPC you can afford, working backward from deal size and funnel conversion rates.
+- [B2B Marketing Budget Planner](https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html): Turn annual revenue into a full marketing budget, split across channels using editable allocation percentages.
+- [Campaign Budget vs Pipeline Goal Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html): Start from a revenue goal and work backward to the leads, opportunities, and budget required to hit it.
+- [CAC &amp; LTV Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-ltv-calculator.html): Calculate Customer Lifetime Value, CAC, and the LTV:CAC ratio investors and boards actually look at.
+- [CAC Payback Period Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html): Find out how many months it takes to earn back what you spent acquiring a customer.
+- [MQL→SQL→Customer Funnel Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html): Model how many MQLs you need to hit a customer target, stage by stage through SQL and opportunity.
+- [Sales Cycle &amp; Pipeline Coverage Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/sales-cycle-pipeline-coverage-calculator.html): Find out how much pipeline needs to be open right now to hit your revenue goal, two ways.
+- [Email Campaign ROI Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html): Turn open rate, click rate, and conversion rate into real revenue and ROI for an email campaign.
+- [Organic Traffic Value Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/organic-traffic-value-calculator.html): Estimate what your organic traffic would cost to buy — and what it's actually worth in pipeline.
+- [Churn &amp; Retention Revenue Impact Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html): See exactly how much revenue churn is costing you monthly and annually — and what fixing it is worth.
+- [Competitor Watchlist Tracker](https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html): Add your competitors once — it remembers them, reminds you when a monthly check is due, and scores priority from what you log.
+- [Posting Cadence &amp; SSI Growth Planner](https://kashubamargarita-byte.github.io/marketing-ops-lab/posting-cadence-ssi-growth-planner.html): Turn a target LinkedIn Social Selling Index (SSI) into a concrete weekly posting and engagement plan.
+- [A/B Test Significance &amp; Sample Size Calculator](https://kashubamargarita-byte.github.io/marketing-ops-lab/ab-test-significance-sample-size-calculator.html): Find out how many visitors per variant you need before trusting an A/B test result.

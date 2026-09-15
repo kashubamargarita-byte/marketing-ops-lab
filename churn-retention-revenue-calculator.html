@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Churn &amp; Retention Revenue Impact Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Calculate the monthly and annual revenue impact of customer churn, and how much improving retention would save.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="Churn &amp; Retention Revenue Impact Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Calculate the monthly and annual revenue impact of customer churn, and how much improving retention would save.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html#app", "name": "Churn &amp; Retention Revenue Impact Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate the monthly and annual revenue impact of customer churn, and how much improving retention would save."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "Churn &amp; Retention Revenue Impact Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/churn-retention-revenue-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "Is this gross or net revenue churn?", "acceptedAnswer": {"@type": "Answer", "text": "This is gross customer churn (lost customers × their revenue). It doesn't net against expansion revenue from existing customers — for net revenue retention, subtract expansion/upsell revenue from the loss figure."}}, {"@type": "Question", "name": "What's a healthy monthly churn rate for B2B SaaS?", "acceptedAnswer": {"@type": "Answer", "text": "Under 1–2% monthly (roughly under 10–20% annually) is generally considered healthy for mid-market/enterprise B2B SaaS; SMB-focused products often run higher."}}, {"@type": "Question", "name": "Should this include downgrade, not just full cancellation?", "acceptedAnswer": {"@type": "Answer", "text": "Ideally yes — if you have data on downgrades/contraction, blend it into the churn rate you use here for a more accurate revenue-at-risk figure."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / Churn &amp; Retention Revenue Impact Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">📉</div>
+    <span class="cat-label">Growth &amp; Retention</span>
+    <h1>Churn &amp; Retention Revenue Impact Calculator</h1>
+    <p class="lede">Churn is often discussed as a percentage, which hides how much real revenue is at stake. This tool converts churn rate into dollars, and shows the upside of improving it.</p>
+    <div class="formula">Revenue Lost = Customers × Churn% × ARPA · Annualized = Monthly Loss × 12</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="customers">Total active customers</label>
+      <div class="input-wrap">
+        <input type="number" id="customers" value="400" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="arpa">Average revenue per customer, monthly ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="arpa" value="500" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="churn">Current monthly churn rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="churn" value="3" step="0.1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="targetChurn">Target monthly churn rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="targetChurn" value="1.5" step="0.1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Current monthly revenue lost to churn</span>
+      <span class="value" id="monthlyLoss">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Annualized revenue at risk</span>
+      <span class="value" id="annualLoss">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Annual revenue saved at target churn</span>
+      <span class="value" id="savings">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Is this gross or net revenue churn?</summary>
+      <div class="faq-a">This is gross customer churn (lost customers × their revenue). It doesn't net against expansion revenue from existing customers — for net revenue retention, subtract expansion/upsell revenue from the loss figure.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What's a healthy monthly churn rate for B2B SaaS?</summary>
+      <div class="faq-a">Under 1–2% monthly (roughly under 10–20% annually) is generally considered healthy for mid-market/enterprise B2B SaaS; SMB-focused products often run higher.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should this include downgrade, not just full cancellation?</summary>
+      <div class="faq-a">Ideally yes — if you have data on downgrades/contraction, blend it into the churn rate you use here for a more accurate revenue-at-risk figure.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="cac-ltv-calculator.html">CAC &amp; LTV Calculator →</a><a href="cac-payback-period-calculator.html">CAC Payback Period Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const customers = num('customers'), arpa = num('arpa'), churn = num('churn')/100, targetChurn = num('targetChurn')/100;
+      const monthlyLoss = customers * churn * arpa;
+      const annualLoss = monthlyLoss * 12;
+      const targetMonthlyLoss = customers * targetChurn * arpa;
+      const savings = (monthlyLoss - targetMonthlyLoss) * 12;
+      set('monthlyLoss', money(monthlyLoss));
+      set('annualLoss', money(annualLoss));
+      set('savings', money(savings) + (savings >= 0 ? ' / year' : ''));
+    
+}
+calculate();
+</script>
+</body>
+</html>

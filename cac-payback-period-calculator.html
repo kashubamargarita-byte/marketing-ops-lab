@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAC Payback Period Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Calculate how many months it takes to earn back your customer acquisition cost — a key SaaS efficiency metric.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="CAC Payback Period Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Calculate how many months it takes to earn back your customer acquisition cost — a key SaaS efficiency metric.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html#app", "name": "CAC Payback Period Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate how many months it takes to earn back your customer acquisition cost — a key SaaS efficiency metric."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "CAC Payback Period Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cac-payback-period-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "What's a good CAC payback period for B2B SaaS?", "acceptedAnswer": {"@type": "Answer", "text": "Under 12 months is a widely used efficiency benchmark for mid-market SaaS; enterprise sales with larger contracts sometimes tolerate 18–24 months given larger deal sizes and expansion revenue."}}, {"@type": "Question", "name": "How is this different from LTV:CAC?", "acceptedAnswer": {"@type": "Answer", "text": "Payback period measures cash efficiency (how fast you get money back); LTV:CAC measures overall profitability of the relationship. A business can have a great LTV:CAC ratio but a slow, cash-straining payback period."}}, {"@type": "Question", "name": "Does expansion revenue change this calculation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — if customers expand (upsell/cross-sell) after the initial sale, effective payback is faster than this base calculation shows since ARPA typically grows over time."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / CAC Payback Period Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">⏱️</div>
+    <span class="cat-label">Unit Economics</span>
+    <h1>CAC Payback Period Calculator</h1>
+    <p class="lede">CAC payback period tells you how long cash is tied up before a customer becomes profitable — critical for cash-constrained or capital-efficient growth planning.</p>
+    <div class="formula">Payback (months) = CAC / (ARPA × Gross Margin%)</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="cac">Customer Acquisition Cost ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="cac" value="4000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="arpa">Average revenue per account, monthly ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="arpa" value="500" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="grossMargin">Gross margin (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="grossMargin" value="75" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">CAC payback period</span>
+      <span class="value" id="payback">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Verdict</span>
+      <span class="value" id="verdict">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>What's a good CAC payback period for B2B SaaS?</summary>
+      <div class="faq-a">Under 12 months is a widely used efficiency benchmark for mid-market SaaS; enterprise sales with larger contracts sometimes tolerate 18–24 months given larger deal sizes and expansion revenue.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>How is this different from LTV:CAC?</summary>
+      <div class="faq-a">Payback period measures cash efficiency (how fast you get money back); LTV:CAC measures overall profitability of the relationship. A business can have a great LTV:CAC ratio but a slow, cash-straining payback period.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Does expansion revenue change this calculation?</summary>
+      <div class="faq-a">Yes — if customers expand (upsell/cross-sell) after the initial sale, effective payback is faster than this base calculation shows since ARPA typically grows over time.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="cac-ltv-calculator.html">CAC &amp; LTV Calculator →</a><a href="b2b-marketing-budget-planner.html">B2B Marketing Budget Planner →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const cac = num('cac'), arpa = num('arpa'), gm = num('grossMargin')/100;
+      const monthlyGrossProfit = arpa * gm;
+      const payback = cac / monthlyGrossProfit;
+      set('payback', payback.toFixed(1) + ' months');
+      set('verdict', payback <= 12 ? '✅ Efficient — under the common 12-month benchmark' : payback <= 18 ? '⚠️ Acceptable for enterprise/long-cycle B2B, watch closely' : '🚩 Slow payback — reduces capital efficiency and runway');
+    
+}
+calculate();
+</script>
+</body>
+</html>

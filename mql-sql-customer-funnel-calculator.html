@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MQL→SQL→Customer Funnel Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Model how MQLs flow through SQL and opportunity stages down to closed customers, with overall conversion rate.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="MQL→SQL→Customer Funnel Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Model how MQLs flow through SQL and opportunity stages down to closed customers, with overall conversion rate.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html#app", "name": "MQL→SQL→Customer Funnel Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Model how MQLs flow through SQL and opportunity stages down to closed customers, with overall conversion rate."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "MQL→SQL→Customer Funnel Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/mql-sql-customer-funnel-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "Which stage should I focus on improving first?", "acceptedAnswer": {"@type": "Answer", "text": "Whichever stage has the lowest conversion rate relative to your benchmarks, or the stage with the highest volume passing through it — improvements there have the largest absolute impact on customers out the bottom."}}, {"@type": "Question", "name": "What are typical benchmark rates for each stage?", "acceptedAnswer": {"@type": "Answer", "text": "They vary hugely by industry and deal size, but common B2B ranges are roughly MQL→SQL 20–50%, SQL→Opportunity 40–60%, Opportunity→Customer (win rate) 15–30%. Use your own historical data whenever you have it."}}, {"@type": "Question", "name": "Should MQL definitions be standardized before using this?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — this model is only as useful as your MQL definition is consistent. Inconsistent lead scoring across time periods will make conversion rates misleading."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / MQL→SQL→Customer Funnel Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">🔻</div>
+    <span class="cat-label">Funnel &amp; Conversion</span>
+    <h1>MQL→SQL→Customer Funnel Calculator</h1>
+    <p class="lede">See the full B2B funnel math in one place — from marketing qualified leads down to closed customers — and spot which stage is the real bottleneck.</p>
+    <div class="formula">Customers = MQLs × MQL→SQL% × SQL→Opp% × Opp→Customer%</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="mql">Marketing Qualified Leads (MQLs)</label>
+      <div class="input-wrap">
+        <input type="number" id="mql" value="1000" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="mqlToSql">MQL → SQL rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="mqlToSql" value="40" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="sqlToOpp">SQL → Opportunity rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="sqlToOpp" value="50" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="oppToCustomer">Opportunity → Customer win rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="oppToCustomer" value="25" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">SQLs</span>
+      <span class="value" id="sql">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Opportunities</span>
+      <span class="value" id="opp">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Customers</span>
+      <span class="value" id="customers">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Overall MQL → Customer rate</span>
+      <span class="value" id="overall">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Which stage should I focus on improving first?</summary>
+      <div class="faq-a">Whichever stage has the lowest conversion rate relative to your benchmarks, or the stage with the highest volume passing through it — improvements there have the largest absolute impact on customers out the bottom.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What are typical benchmark rates for each stage?</summary>
+      <div class="faq-a">They vary hugely by industry and deal size, but common B2B ranges are roughly MQL→SQL 20–50%, SQL→Opportunity 40–60%, Opportunity→Customer (win rate) 15–30%. Use your own historical data whenever you have it.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should MQL definitions be standardized before using this?</summary>
+      <div class="faq-a">Yes — this model is only as useful as your MQL definition is consistent. Inconsistent lead scoring across time periods will make conversion rates misleading.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="sales-cycle-pipeline-coverage-calculator.html">Sales Cycle &amp; Pipeline Coverage Calculator →</a><a href="cpl-max-cpc-calculator.html">CPL &amp; Max CPC Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const mql = num('mql'), mqlToSql = num('mqlToSql')/100, sqlToOpp = num('sqlToOpp')/100, oppToCustomer = num('oppToCustomer')/100;
+      const sql = mql * mqlToSql;
+      const opp = sql * sqlToOpp;
+      const customers = opp * oppToCustomer;
+      set('sql', Math.round(sql).toLocaleString());
+      set('opp', Math.round(opp).toLocaleString());
+      set('customers', Math.round(customers*10)/10);
+      set('overall', (mqlToSql*sqlToOpp*oppToCustomer*100).toFixed(2) + '%');
+    
+}
+calculate();
+</script>
+</body>
+</html>

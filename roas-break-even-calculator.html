@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROAS &amp; Break-Even Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Free ROAS and break-even ROAS calculator for B2B marketers. Find your real ad profitability after COGS and costs, instantly, no signup.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="ROAS &amp; Break-Even Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Free ROAS and break-even ROAS calculator for B2B marketers. Find your real ad profitability after COGS and costs, instantly, no signup.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html#app", "name": "ROAS &amp; Break-Even Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free ROAS and break-even ROAS calculator for B2B marketers. Find your real ad profitability after COGS and costs, instantly, no signup."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "ROAS &amp; Break-Even Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/roas-break-even-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "What's a good ROAS for B2B?", "acceptedAnswer": {"@type": "Answer", "text": "It depends entirely on your margins, not a fixed number. A 3x ROAS can lose money if your COGS and delivery costs are high, while 1.5x can be very profitable in a high-margin SaaS business. Always compare your ROAS to your break-even ROAS, not to a generic industry rule of thumb."}}, {"@type": "Question", "name": "How is break-even ROAS calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Break-even ROAS = 1 / (1 − variable cost % of revenue). It's the minimum return needed for revenue to cover ad spend plus the cost of delivering the product or service."}}, {"@type": "Question", "name": "Does this work for lead-gen campaigns, not just e-commerce?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — treat 'revenue' as the value of closed deals attributed to the spend, and 'COGS' as delivery/fulfillment or cost-to-serve for those deals."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / ROAS &amp; Break-Even Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">🎯</div>
+    <span class="cat-label">Paid &amp; Budget</span>
+    <h1>ROAS &amp; Break-Even Calculator</h1>
+    <p class="lede">Return on Ad Spend (ROAS) alone doesn't tell you if a campaign is profitable — you need to know your break-even threshold after cost of goods and delivery costs. This calculator gives you both in one view.</p>
+    <div class="formula">ROAS = Revenue / Ad Spend · Break-Even ROAS = 1 / (1 − COGS% − Other Variable Cost%)</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="adSpend">Ad spend ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="adSpend" value="10000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="revenue">Revenue generated ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="revenue" value="35000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="cogsPct">COGS / delivery cost (% of revenue)</label>
+      <div class="input-wrap">
+        <input type="number" id="cogsPct" value="25" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="otherPct">Other variable costs (% of revenue)</label>
+      <div class="input-wrap">
+        <input type="number" id="otherPct" value="10" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Your ROAS</span>
+      <span class="value" id="roas">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Break-even ROAS</span>
+      <span class="value" id="beRoas">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Net profit after costs</span>
+      <span class="value" id="netProfit">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Verdict</span>
+      <span class="value" id="verdict">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>What's a good ROAS for B2B?</summary>
+      <div class="faq-a">It depends entirely on your margins, not a fixed number. A 3x ROAS can lose money if your COGS and delivery costs are high, while 1.5x can be very profitable in a high-margin SaaS business. Always compare your ROAS to your break-even ROAS, not to a generic industry rule of thumb.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>How is break-even ROAS calculated?</summary>
+      <div class="faq-a">Break-even ROAS = 1 / (1 − variable cost % of revenue). It's the minimum return needed for revenue to cover ad spend plus the cost of delivering the product or service.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Does this work for lead-gen campaigns, not just e-commerce?</summary>
+      <div class="faq-a">Yes — treat 'revenue' as the value of closed deals attributed to the spend, and 'COGS' as delivery/fulfillment or cost-to-serve for those deals.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="cpl-max-cpc-calculator.html">CPL &amp; Max CPC Calculator →</a><a href="b2b-marketing-budget-planner.html">B2B Marketing Budget Planner →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const adSpend = num('adSpend'), revenue = num('revenue');
+      const cogsPct = num('cogsPct')/100, otherPct = num('otherPct')/100;
+      const roas = revenue / adSpend;
+      const beRoas = 1 / (1 - cogsPct - otherPct);
+      const netProfit = revenue - adSpend - revenue*(cogsPct+otherPct);
+      set('roas', roas.toFixed(2) + 'x');
+      set('beRoas', isFinite(beRoas) ? beRoas.toFixed(2) + 'x' : 'n/a');
+      set('netProfit', money(netProfit));
+      set('verdict', roas >= beRoas ? '✅ Profitable — above break-even' : '⚠️ Below break-even — losing money on this spend');
+    
+}
+calculate();
+</script>
+</body>
+</html>

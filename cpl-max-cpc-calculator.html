@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CPL &amp; Max CPC Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Work backward from deal size to your maximum allowable cost per lead and cost per click for profitable B2B paid campaigns.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="CPL &amp; Max CPC Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Work backward from deal size to your maximum allowable cost per lead and cost per click for profitable B2B paid campaigns.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html#app", "name": "CPL &amp; Max CPC Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Work backward from deal size to your maximum allowable cost per lead and cost per click for profitable B2B paid campaigns."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "CPL &amp; Max CPC Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/cpl-max-cpc-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "Why calculate max CPC backward instead of using channel benchmarks?", "acceptedAnswer": {"@type": "Answer", "text": "Benchmarks tell you what others pay on average — not what your specific funnel and deal size can afford. Two companies with the same CPC can have wildly different profitability depending on close rate and deal size."}}, {"@type": "Question", "name": "What counts as 'max acceptable CAC'?", "acceptedAnswer": {"@type": "Answer", "text": "A common B2B rule of thumb is CAC should be no more than 1/3 of first-year contract value, but capital-efficient or bootstrapped teams often target far less. Adjust the % to match your own targets."}}, {"@type": "Question", "name": "Should I use blended or channel-specific conversion rates?", "acceptedAnswer": {"@type": "Answer", "text": "Channel-specific whenever you have enough data — paid social, paid search, and events usually convert differently at every funnel stage."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / CPL &amp; Max CPC Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">🧮</div>
+    <span class="cat-label">Paid &amp; Budget</span>
+    <h1>CPL &amp; Max CPC Calculator</h1>
+    <p class="lede">Instead of guessing a target CPC, work backward from what a customer is actually worth and how your funnel converts. This tells you the maximum you can bid before a channel becomes unprofitable.</p>
+    <div class="formula">Max CPL = Max CAC × Lead→Opp% × Win% · Max CPC = Max CPL × Click→Lead%</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="dealSize">Average deal size ($/year)</label>
+      <div class="input-wrap">
+        <input type="number" id="dealSize" value="12000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="maxCacPct">Max acceptable CAC (% of deal size)</label>
+      <div class="input-wrap">
+        <input type="number" id="maxCacPct" value="30" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="leadToOpp">Lead → Opportunity rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="leadToOpp" value="20" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="winRate">Opportunity → Customer win rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="winRate" value="25" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="clickToLead">Click → Lead conversion rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="clickToLead" value="5" step="0.5" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Max CAC</span>
+      <span class="value" id="maxCac">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Max cost per lead (CPL)</span>
+      <span class="value" id="maxCpl">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Max cost per click (CPC)</span>
+      <span class="value" id="maxCpc">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Why calculate max CPC backward instead of using channel benchmarks?</summary>
+      <div class="faq-a">Benchmarks tell you what others pay on average — not what your specific funnel and deal size can afford. Two companies with the same CPC can have wildly different profitability depending on close rate and deal size.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What counts as 'max acceptable CAC'?</summary>
+      <div class="faq-a">A common B2B rule of thumb is CAC should be no more than 1/3 of first-year contract value, but capital-efficient or bootstrapped teams often target far less. Adjust the % to match your own targets.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should I use blended or channel-specific conversion rates?</summary>
+      <div class="faq-a">Channel-specific whenever you have enough data — paid social, paid search, and events usually convert differently at every funnel stage.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="roas-break-even-calculator.html">ROAS &amp; Break-Even Calculator →</a><a href="cac-ltv-calculator.html">CAC &amp; LTV Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const dealSize = num('dealSize'), maxCacPct = num('maxCacPct')/100;
+      const leadToOpp = num('leadToOpp')/100, winRate = num('winRate')/100, clickToLead = num('clickToLead')/100;
+      const maxCac = dealSize * maxCacPct;
+      const maxCpl = maxCac * leadToOpp * winRate;
+      const maxCpc = maxCpl * clickToLead;
+      set('maxCac', money(maxCac));
+      set('maxCpl', money(maxCpl));
+      set('maxCpc', money(maxCpc));
+    
+}
+calculate();
+</script>
+</body>
+</html>

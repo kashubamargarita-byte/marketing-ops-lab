@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campaign Budget vs Pipeline Goal Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Work backward from a B2B revenue goal to the leads, opportunities and budget you need to hit it.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="Campaign Budget vs Pipeline Goal Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Work backward from a B2B revenue goal to the leads, opportunities and budget you need to hit it.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html#app", "name": "Campaign Budget vs Pipeline Goal Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Work backward from a B2B revenue goal to the leads, opportunities and budget you need to hit it."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "Campaign Budget vs Pipeline Goal Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-campaign-budget-pipeline-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "How is this different from the Marketing Budget Planner?", "acceptedAnswer": {"@type": "Answer", "text": "The Budget Planner starts from revenue and a fixed % to size a total budget top-down. This tool starts from a specific pipeline/revenue goal and calculates bottom-up exactly what's needed to reach it — useful for sanity-checking whether a top-down budget is actually enough."}}, {"@type": "Question", "name": "What if the budget required looks too high?", "acceptedAnswer": {"@type": "Answer", "text": "That's a signal to improve funnel conversion rates (lead→opp, win rate) or raise average deal size rather than only adding more budget — small conversion improvements compound significantly in this formula."}}, {"@type": "Question", "name": "Should I use blended cost per lead or channel-specific?", "acceptedAnswer": {"@type": "Answer", "text": "Channel-specific if you're planning a specific campaign or channel mix; blended CPL is fine for a rough company-wide sanity check."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / Campaign Budget vs Pipeline Goal Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">🎯</div>
+    <span class="cat-label">Paid &amp; Budget</span>
+    <h1>Campaign Budget vs Pipeline Goal Calculator</h1>
+    <p class="lede">Instead of picking a budget number and hoping it produces enough pipeline, start from the revenue goal and calculate exactly how many leads, opportunities, and dollars you need.</p>
+    <div class="formula">Leads Needed = (Revenue Goal / Deal Size) / Win% / Lead→Opp% · Budget = Leads × Cost per Lead</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="revenueGoal">Revenue goal ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="revenueGoal" value="1000000" step="10000" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="dealSize">Average deal size ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="dealSize" value="15000" step="500" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="winRate">Opportunity win rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="winRate" value="25" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="leadToOpp">Lead → Opportunity rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="leadToOpp" value="20" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="cpl">Cost per lead ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="cpl" value="150" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Customers needed</span>
+      <span class="value" id="dealsNeeded">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Opportunities needed</span>
+      <span class="value" id="oppsNeeded">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Leads needed</span>
+      <span class="value" id="leadsNeeded">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Budget required</span>
+      <span class="value" id="budgetNeeded">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>How is this different from the Marketing Budget Planner?</summary>
+      <div class="faq-a">The Budget Planner starts from revenue and a fixed % to size a total budget top-down. This tool starts from a specific pipeline/revenue goal and calculates bottom-up exactly what's needed to reach it — useful for sanity-checking whether a top-down budget is actually enough.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What if the budget required looks too high?</summary>
+      <div class="faq-a">That's a signal to improve funnel conversion rates (lead→opp, win rate) or raise average deal size rather than only adding more budget — small conversion improvements compound significantly in this formula.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should I use blended cost per lead or channel-specific?</summary>
+      <div class="faq-a">Channel-specific if you're planning a specific campaign or channel mix; blended CPL is fine for a rough company-wide sanity check.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="b2b-marketing-budget-planner.html">B2B Marketing Budget Planner →</a><a href="sales-cycle-pipeline-coverage-calculator.html">Sales Cycle &amp; Pipeline Coverage Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const revenueGoal = num('revenueGoal'), dealSize = num('dealSize');
+      const winRate = num('winRate')/100, leadToOpp = num('leadToOpp')/100, cpl = num('cpl');
+      const dealsNeeded = revenueGoal / dealSize;
+      const oppsNeeded = dealsNeeded / winRate;
+      const leadsNeeded = oppsNeeded / leadToOpp;
+      const budgetNeeded = leadsNeeded * cpl;
+      set('dealsNeeded', Math.ceil(dealsNeeded).toLocaleString());
+      set('oppsNeeded', Math.ceil(oppsNeeded).toLocaleString());
+      set('leadsNeeded', Math.ceil(leadsNeeded).toLocaleString());
+      set('budgetNeeded', money(budgetNeeded));
+    
+}
+calculate();
+</script>
+</body>
+</html>

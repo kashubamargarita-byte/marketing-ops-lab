@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Email Campaign ROI Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Calculate revenue, conversions, and ROI from an email campaign based on open rate, click rate, and conversion rate.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="Email Campaign ROI Calculator: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Calculate revenue, conversions, and ROI from an email campaign based on open rate, click rate, and conversion rate.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html#app", "name": "Email Campaign ROI Calculator", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate revenue, conversions, and ROI from an email campaign based on open rate, click rate, and conversion rate."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "Email Campaign ROI Calculator", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/email-campaign-roi-calculator.html#faq", "mainEntity": [{"@type": "Question", "name": "Should 'conversion' mean a sale or an MQL?", "acceptedAnswer": {"@type": "Answer", "text": "Either — define it consistently for your funnel. For long B2B cycles, use MQL or meeting-booked as the conversion event and an appropriately scaled 'average value' (e.g. pipeline value × win rate) instead of a full deal value."}}, {"@type": "Question", "name": "What's a realistic CTR for B2B email?", "acceptedAnswer": {"@type": "Answer", "text": "B2B click-through rates commonly range 1.5–4% of sends depending on list quality and relevance; segmented, well-targeted lists perform meaningfully better than broad blasts."}}, {"@type": "Question", "name": "Does this account for unsubscribes or list decay?", "acceptedAnswer": {"@type": "Answer", "text": "No — this is a single-campaign snapshot. List health and long-term deliverability should be tracked separately."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / Email Campaign ROI Calculator</div>
+  <section class="tool-header">
+    <div class="icon-badge">✉️</div>
+    <span class="cat-label">Email &amp; CRM</span>
+    <h1>Email Campaign ROI Calculator</h1>
+    <p class="lede">Open and click rates look good on a dashboard, but the number that matters is revenue. This tool carries funnel metrics all the way through to ROI.</p>
+    <div class="formula">Revenue = Sent × CTR% × Conversion% × Avg Deal Value · ROI% = (Revenue − Cost) / Cost × 100</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="sent">Emails sent</label>
+      <div class="input-wrap">
+        <input type="number" id="sent" value="10000" step="100" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="ctr">Click-through rate (% of sent)</label>
+      <div class="input-wrap">
+        <input type="number" id="ctr" value="2.5" step="0.1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="convRate">Click → Conversion rate (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="convRate" value="5" step="0.5" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="avgValue">Average value per conversion ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="avgValue" value="500" step="10" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="cost">Campaign cost ($ — tools, design, list, etc.)</label>
+      <div class="input-wrap">
+        <input type="number" id="cost" value="800" step="50" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Clicks</span>
+      <span class="value" id="clicks">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Conversions</span>
+      <span class="value" id="conversions">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Revenue generated</span>
+      <span class="value" id="revenue">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">ROI</span>
+      <span class="value" id="roi">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Should 'conversion' mean a sale or an MQL?</summary>
+      <div class="faq-a">Either — define it consistently for your funnel. For long B2B cycles, use MQL or meeting-booked as the conversion event and an appropriately scaled 'average value' (e.g. pipeline value × win rate) instead of a full deal value.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>What's a realistic CTR for B2B email?</summary>
+      <div class="faq-a">B2B click-through rates commonly range 1.5–4% of sends depending on list quality and relevance; segmented, well-targeted lists perform meaningfully better than broad blasts.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Does this account for unsubscribes or list decay?</summary>
+      <div class="faq-a">No — this is a single-campaign snapshot. List health and long-term deliverability should be tracked separately.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="organic-traffic-value-calculator.html">Organic Traffic Value Calculator →</a><a href="posting-cadence-ssi-growth-planner.html">Posting Cadence &amp; SSI Growth Planner →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const sent = num('sent'), ctr = num('ctr')/100, convRate = num('convRate')/100, avgValue = num('avgValue'), cost = num('cost');
+      const clicks = sent * ctr;
+      const conversions = clicks * convRate;
+      const revenue = conversions * avgValue;
+      const roi = cost > 0 ? (revenue - cost) / cost * 100 : 0;
+      set('clicks', Math.round(clicks).toLocaleString());
+      set('conversions', (Math.round(conversions*10)/10).toLocaleString());
+      set('revenue', money(revenue));
+      set('roi', roi.toFixed(0) + '%');
+    
+}
+calculate();
+</script>
+</body>
+</html>

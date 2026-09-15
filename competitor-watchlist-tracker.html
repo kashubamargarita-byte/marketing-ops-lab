@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Competitor Watchlist Tracker: Free B2B Competitor Tracker (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Add your B2B competitors once and this tool tracks check-in cadence, reminds you monthly, and scores monitoring priority automatically.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="Competitor Watchlist Tracker: Free B2B Competitor Tracker (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Add your B2B competitors once and this tool tracks check-in cadence, reminds you monthly, and scores monitoring priority automatically.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html#app", "name": "Competitor Watchlist Tracker", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Add your B2B competitors once and this tool tracks check-in cadence, reminds you monthly, and scores monitoring priority automatically."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "Competitor Watchlist Tracker", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/competitor-watchlist-tracker.html#faq", "mainEntity": [{"@type": "Question", "name": "Does this actually check competitor sites automatically in the background?", "acceptedAnswer": {"@type": "Answer", "text": "No — and no free, no-login web tool honestly can. Browsers can't silently visit other companies' sites while the tab is closed; that needs a server and scheduled jobs. What this tool automates instead is everything around that: remembering your list, tracking how long it's been, reminding you when it's due, and scoring priority from what you log — so the only manual step left is actually looking at the page."}}, {"@type": "Question", "name": "Where is my competitor list stored?", "acceptedAnswer": {"@type": "Answer", "text": "In your browser's local storage on this device only. It isn't sent anywhere and won't sync across devices — export/re-add if you switch computers."}}, {"@type": "Question", "name": "Where do I find changelog, pricing, and careers URLs for a competitor?", "acceptedAnswer": {"@type": "Answer", "text": "Most B2B SaaS sites have a `/changelog`, `/pricing`, and `/careers` or `/jobs` path. If you can't find a changelog, their release notes are sometimes under `/updates`, `/release-notes`, or a blog tag."}}, {"@type": "Question", "name": "How is the priority score calculated?", "acceptedAnswer": {"@type": "Answer", "text": "The same weighted model as before — release frequency, pricing changes, hiring activity, and your stated strategic overlap — but now pulled automatically from your logged check-ins instead of re-entered by hand each time."}}]}]}</script><style>
+.wl-addbox{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .7fr auto;gap:10px;align-items:end;margin-bottom:10px}
+@media (max-width:900px){.wl-addbox{grid-template-columns:1fr 1fr}}
+.wl-addbox .field{margin-bottom:0}
+.wl-addbox label{font-size:12px}
+.wl-empty{padding:30px;text-align:center;color:var(--text-muted);border:1px dashed var(--border);border-radius:12px}
+.wl-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.wl-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;gap:12px;flex-wrap:wrap}
+.wl-name{font-size:17px;font-weight:800}
+.wl-badge{font-size:12px;font-weight:800;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.wl-badge.ok{background:#e8f5ee;color:#1a7548}
+.wl-badge.warn{background:#faf3dc;color:#7a5808}
+.wl-badge.due{background:#fbeae5;color:#a03828}
+.wl-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 14px}
+.wl-links a{border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:700}
+.wl-score-row{display:flex;gap:18px;flex-wrap:wrap;padding:0 20px 16px;font-size:13.5px;color:var(--text-muted)}
+.wl-score-row b{color:var(--text);font-size:15px}
+.wl-actions{display:flex;gap:10px;padding:14px 20px;border-top:1px solid var(--border);background:var(--bg)}
+.wl-logform{display:none;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:16px 20px;border-top:1px solid var(--border);background:var(--bg)}
+.wl-logform.open{display:grid}
+.wl-logform .full{grid-column:1/-1}
+.wl-logform label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}
+.wl-logform input,.wl-logform textarea{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:14px;font-family:inherit}
+.wl-history{padding:4px 20px 16px;font-size:13px;color:var(--text-muted)}
+.wl-history details summary{cursor:pointer;font-weight:700;color:var(--text)}
+.wl-history .entry{padding:8px 0;border-bottom:1px solid var(--border)}
+.wl-history .entry:last-child{border-bottom:none}
+.wl-del{background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;font-weight:700}
+.wl-del:hover{color:#a03828}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / Competitor Watchlist Tracker</div>
+  <section class="tool-header">
+    <div class="icon-badge">🕵️</div>
+    <span class="cat-label">Competitive Intel</span>
+    <h1>Competitor Watchlist Tracker</h1>
+    <p class="lede">Add each competitor once with their changelog, pricing, and careers page links. The tracker remembers them in your browser, flags who's overdue for a check, opens the right pages in one click, and turns what you log into a running priority score — no account, no server.</p>
+    <div class="formula">Saved locally in your browser · Priority score recalculates from your logged check-ins over time</div>
+  </section>
+
+  <div class="panel" style="margin-bottom:24px">
+    <h2>Add a competitor</h2>
+    <div class="wl-addbox">
+      <div class="field"><label>Name</label><input id="wlName" placeholder="e.g. Acme Corp"></div>
+      <div class="field"><label>Changelog URL</label><input id="wlChangelog" placeholder="https://..."></div>
+      <div class="field"><label>Pricing URL</label><input id="wlPricing" placeholder="https://..."></div>
+      <div class="field"><label>Careers URL</label><input id="wlCareers" placeholder="https://..."></div>
+      <div class="field"><label>Overlap (1-5)</label><input id="wlOverlap" type="number" min="1" max="5" value="3"></div>
+      <button class="btn" onclick="wlAdd()">Add competitor</button>
+    </div>
+  </div>
+
+  <div id="wlEmpty" class="wl-empty" hidden>No competitors yet — add your first one above. Everything is saved in this browser only.</div>
+  <div id="wlList"></div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>Does this actually check competitor sites automatically in the background?</summary>
+      <div class="faq-a">No — and no free, no-login web tool honestly can. Browsers can't silently visit other companies' sites while the tab is closed; that needs a server and scheduled jobs. What this tool automates instead is everything around that: remembering your list, tracking how long it's been, reminding you when it's due, and scoring priority from what you log — so the only manual step left is actually looking at the page.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Where is my competitor list stored?</summary>
+      <div class="faq-a">In your browser's local storage on this device only. It isn't sent anywhere and won't sync across devices — export/re-add if you switch computers.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Where do I find changelog, pricing, and careers URLs for a competitor?</summary>
+      <div class="faq-a">Most B2B SaaS sites have a `/changelog`, `/pricing`, and `/careers` or `/jobs` path. If you can't find a changelog, their release notes are sometimes under `/updates`, `/release-notes`, or a blog tag.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>How is the priority score calculated?</summary>
+      <div class="faq-a">The same weighted model as before — release frequency, pricing changes, hiring activity, and your stated strategic overlap — but now pulled automatically from your logged check-ins instead of re-entered by hand each time.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="b2b-marketing-budget-planner.html">B2B Marketing Budget Planner →</a><a href="sales-cycle-pipeline-coverage-calculator.html">Sales Cycle &amp; Pipeline Coverage Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+
+const STORAGE_KEY = 'molCompetitorWatchlist_v1';
+
+function wlLoad(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch(e){ return []; } }
+function wlSave(list){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch(e){} }
+function uid(){ return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
+function daysAgo(iso){ if(!iso) return null; const d = (Date.now() - new Date(iso).getTime())/86400000; return Math.floor(d); }
+function fmtDate(iso){ if(!iso) return 'never'; return new Date(iso).toLocaleDateString('en-US', {year:'numeric',month:'short',day:'numeric'}); }
+
+function computeScore(c){
+  const last = c.log && c.log.length ? c.log[c.log.length-1] : null;
+  const releases = last ? Number(last.releases)||0 : 0;
+  const pricing = last ? Number(last.pricingChange ? 1 : 0) : 0;
+  const jobs = last ? Number(last.jobPostings)||0 : 0;
+  const overlap = Number(c.overlap)||3;
+  const activity = Math.min(releases*6,30) + Math.min(pricing*20,20) + Math.min(jobs*2,20);
+  const score = Math.min(100, Math.round(activity * (0.5 + overlap*0.125)));
+  let tier, cadenceDays;
+  if (score >= 66) { tier = '🔴 High priority'; cadenceDays = 14; }
+  else if (score >= 35) { tier = '🟡 Medium priority'; cadenceDays = 30; }
+  else { tier = '🟢 Low priority'; cadenceDays = 90; }
+  return {score, tier, cadenceDays};
+}
+
+function wlRender(){
+  const list = wlLoad();
+  const root = document.getElementById('wlList');
+  const empty = document.getElementById('wlEmpty');
+  if (!list.length){ root.innerHTML=''; empty.hidden = false; return; }
+  empty.hidden = true;
+  root.innerHTML = list.map(c => {
+    const lastLog = c.log && c.log.length ? c.log[c.log.length-1] : null;
+    const lastDate = lastLog ? lastLog.date : c.createdAt;
+    const da = daysAgo(lastDate);
+    const {score, tier, cadenceDays} = computeScore(c);
+    let badgeClass = 'ok', badgeText = da===null ? 'Not checked yet' : da + ' days since last check';
+    if (da !== null && da >= cadenceDays) { badgeClass = 'due'; badgeText = '⚠️ Overdue — ' + da + 'd since check (target every ' + cadenceDays + 'd)'; }
+    else if (da !== null && da >= cadenceDays*0.66) { badgeClass = 'warn'; badgeText = da + 'd since check (target every ' + cadenceDays + 'd)'; }
+    const links = ['changelogUrl','pricingUrl','careersUrl'].map(k => {
+      const labels = {changelogUrl:'Changelog', pricingUrl:'Pricing', careersUrl:'Careers'};
+      return c[k] ? '<a href="'+c[k]+'" target="_blank" rel="noopener">'+labels[k]+' ↗</a>' : '';
+    }).join('');
+    const history = (c.log||[]).slice().reverse().map(h =>
+      '<div class="entry"><b>'+fmtDate(h.date)+'</b> — releases: '+ (h.releases||0) +', pricing change: '+(h.pricingChange?'yes':'no')+', job postings: '+(h.jobPostings||0)+(h.notes ? ' — '+h.notes.replace(/</g,'&lt;') : '')+'</div>'
+    ).join('') || '<div class="entry">No check-ins logged yet.</div>';
+    return '<div class="wl-card" data-id="'+c.id+'">'
+      + '<div class="wl-top"><div class="wl-name">'+c.name.replace(/</g,'&lt;')+'</div><span class="wl-badge '+badgeClass+'">'+badgeText+'</span></div>'
+      + '<div class="wl-links">'+links+'</div>'
+      + '<div class="wl-score-row"><span>Priority: <b>'+tier+'</b></span><span>Score: <b>'+score+'/100</b></span><span>Check every: <b>'+cadenceDays+' days</b></span></div>'
+      + '<div class="wl-actions"><button class="btn" onclick="wlToggleLog(\''+c.id+'\')">Log a check-in</button><button class="btn secondary" onclick="wlDelete(\''+c.id+'\')">Remove</button></div>'
+      + '<div class="wl-logform" id="logform-'+c.id+'">'
+        + '<div><label>Releases / changelog updates seen</label><input type="number" id="rel-'+c.id+'" value="0" min="0"></div>'
+        + '<div><label>Pricing page changed?</label><input type="checkbox" id="price-'+c.id+'" style="width:18px;height:18px;margin-top:6px"></div>'
+        + '<div><label>New job postings seen</label><input type="number" id="jobs-'+c.id+'" value="0" min="0"></div>'
+        + '<div class="full"><label>Notes (optional)</label><textarea id="notes-'+c.id+'" rows="2" placeholder="e.g. launched an MCP integration, raised prices 10%..."></textarea></div>'
+        + '<div class="full"><button class="btn" onclick="wlSaveLog(\''+c.id+'\')">Save check-in</button></div>'
+      + '</div>'
+      + '<div class="wl-history"><details><summary>Check-in history ('+(c.log||[]).length+')</summary>'+history+'</details></div>'
+      + '</div>';
+  }).join('');
+}
+
+function wlAdd(){
+  const name = document.getElementById('wlName').value.trim();
+  if (!name) { document.getElementById('wlName').focus(); return; }
+  const list = wlLoad();
+  list.push({
+    id: uid(), name,
+    changelogUrl: document.getElementById('wlChangelog').value.trim(),
+    pricingUrl: document.getElementById('wlPricing').value.trim(),
+    careersUrl: document.getElementById('wlCareers').value.trim(),
+    overlap: document.getElementById('wlOverlap').value || 3,
+    createdAt: new Date().toISOString(),
+    log: []
+  });
+  wlSave(list);
+  ['wlName','wlChangelog','wlPricing','wlCareers'].forEach(id => document.getElementById(id).value='');
+  wlRender();
+}
+
+function wlDelete(id){
+  wlSave(wlLoad().filter(c => c.id !== id));
+  wlRender();
+}
+
+function wlToggleLog(id){
+  const el = document.getElementById('logform-'+id);
+  el.classList.toggle('open');
+}
+
+function wlSaveLog(id){
+  const list = wlLoad();
+  const c = list.find(x => x.id === id);
+  if (!c) return;
+  c.log = c.log || [];
+  c.log.push({
+    date: new Date().toISOString(),
+    releases: Number(document.getElementById('rel-'+id).value)||0,
+    pricingChange: document.getElementById('price-'+id).checked,
+    jobPostings: Number(document.getElementById('jobs-'+id).value)||0,
+    notes: document.getElementById('notes-'+id).value.trim()
+  });
+  wlSave(list);
+  wlRender();
+}
+
+wlRender();
+
+</script>
+</body>
+</html>

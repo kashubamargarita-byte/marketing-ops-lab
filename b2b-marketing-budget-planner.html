@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>B2B Marketing Budget Planner: Free B2B Marketing Tool (2026) — Marketing Ops Lab</title>
+<meta name="description" content="Plan your annual B2B marketing budget as a percentage of revenue and split it across paid, content, events, martech and team.">
+<link rel="canonical" href="https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Ops Lab">
+<meta property="og:title" content="B2B Marketing Budget Planner: Free B2B Marketing Tool (2026) — Marketing Ops Lab">
+<meta property="og:description" content="Plan your annual B2B marketing budget as a percentage of revenue and split it across paid, content, events, martech and team.">
+<meta property="og:url" content="https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234f46e5'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html#app", "name": "B2B Marketing Budget Planner", "url": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html", "applicationCategory": "BusinessApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Plan your annual B2B marketing budget as a percentage of revenue and split it across paid, content, events, martech and team."}, {"@type": "BreadcrumbList", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/"}, {"@type": "ListItem", "position": 2, "name": "All Tools", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/index.html#tools"}, {"@type": "ListItem", "position": 3, "name": "B2B Marketing Budget Planner", "item": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html"}]}, {"@type": "FAQPage", "@id": "https://kashubamargarita-byte.github.io/marketing-ops-lab/b2b-marketing-budget-planner.html#faq", "mainEntity": [{"@type": "Question", "name": "What % of revenue should B2B companies spend on marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Early-stage or high-growth B2B SaaS often spends 10–15%+ of revenue on marketing; established mid-market B2B typically runs 6–9%. Use your growth targets and CAC payback tolerance to pick a number, then stress-test it here."}}, {"@type": "Question", "name": "Should allocation percentages change by growth stage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — earlier-stage companies typically weight paid and content heavier to build pipeline fast; more mature companies often shift more into ABM, events, and retention/expansion marketing."}}, {"@type": "Question", "name": "Does this include headcount costs?", "acceptedAnswer": {"@type": "Answer", "text": "The 'Team & agencies' bucket is meant to cover people and agency costs — adjust that allocation to match how much of your budget is compensation versus working media."}}]}]}</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="logo">M</span>Marketing Ops Lab</a>
+    <nav class="main">
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#about">About</a>
+      <a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn secondary" href="index.html#tools">Browse Tools →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#tools">All Tools</a> / B2B Marketing Budget Planner</div>
+  <section class="tool-header">
+    <div class="icon-badge">📊</div>
+    <span class="cat-label">Paid &amp; Budget</span>
+    <h1>B2B Marketing Budget Planner</h1>
+    <p class="lede">B2B companies typically invest 6–12% of revenue in marketing depending on growth stage. This planner turns that single percentage into a channel-by-channel budget you can defend in a board meeting.</p>
+    <div class="formula">Total Budget = Revenue × Budget% · Channel Budget = Total × Channel Allocation%</div>
+  </section>
+
+  <section class="tool-grid">
+    <div class="panel">
+      <h2>Inputs</h2>
+      
+    <div class="field">
+      <label for="revenue">Annual revenue ($)</label>
+      <div class="input-wrap">
+        <input type="number" id="revenue" value="5000000" step="10000" oninput="calculate()">
+        
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="budgetPct">Marketing budget (% of revenue)</label>
+      <div class="input-wrap">
+        <input type="number" id="budgetPct" value="8" step="0.5" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="paidPct">Paid media allocation (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="paidPct" value="30" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="contentPct">Content &amp; SEO allocation (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="contentPct" value="20" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="eventsPct">Events &amp; ABM allocation (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="eventsPct" value="20" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="martechPct">Martech &amp; tools allocation (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="martechPct" value="15" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="teamPct">Team &amp; agencies allocation (%)</label>
+      <div class="input-wrap">
+        <input type="number" id="teamPct" value="15" step="1" oninput="calculate()">
+        <span class="suffix">%</span>
+      </div>
+    </div>
+    
+    </div>
+    <div class="panel">
+      <h2>Results</h2>
+      <div class="results">
+        
+    <div class="result-row primary">
+      <span class="label">Total annual marketing budget</span>
+      <span class="value" id="total">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Paid media</span>
+      <span class="value" id="paid">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Content &amp; SEO</span>
+      <span class="value" id="content">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Events &amp; ABM</span>
+      <span class="value" id="events">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Martech &amp; tools</span>
+      <span class="value" id="martech">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Team &amp; agencies</span>
+      <span class="value" id="team">–</span>
+    </div>
+    
+    <div class="result-row">
+      <span class="label">Allocation total check</span>
+      <span class="value" id="allocCheck">–</span>
+    </div>
+    
+      </div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div>
+    
+    <details class="faq">
+      <summary>What % of revenue should B2B companies spend on marketing?</summary>
+      <div class="faq-a">Early-stage or high-growth B2B SaaS often spends 10–15%+ of revenue on marketing; established mid-market B2B typically runs 6–9%. Use your growth targets and CAC payback tolerance to pick a number, then stress-test it here.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Should allocation percentages change by growth stage?</summary>
+      <div class="faq-a">Yes — earlier-stage companies typically weight paid and content heavier to build pipeline fast; more mature companies often shift more into ABM, events, and retention/expansion marketing.</div>
+    </details>
+    
+    <details class="faq">
+      <summary>Does this include headcount costs?</summary>
+      <div class="faq-a">The 'Team & agencies' bucket is meant to cover people and agency costs — adjust that allocation to match how much of your budget is compensation versus working media.</div>
+    </details>
+    
+  </div>
+
+  <h2 class="section-title">Related tools</h2>
+  <div class="related">
+    <a href="b2b-campaign-budget-pipeline-calculator.html">Campaign Budget vs Pipeline Goal Calculator →</a><a href="sales-cycle-pipeline-coverage-calculator.html">Sales Cycle &amp; Pipeline Coverage Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 Marketing Ops Lab. Free tools for B2B marketers and CMOs — no signup, no paywall.</div>
+    <div><a href="https://github.com/kashubamargarita-byte/marketing-ops-lab" target="_blank" rel="noopener">Open source on GitHub</a></div>
+  </div>
+</footer>
+
+<script>
+function num(id){ const v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+function set(id, val){ document.getElementById(id).textContent = val; }
+function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+function calculate(){
+  
+      const revenue = num('revenue'), budgetPct = num('budgetPct')/100;
+      const total = revenue * budgetPct;
+      const pcts = { paid: num('paidPct'), content: num('contentPct'), events: num('eventsPct'), martech: num('martechPct'), team: num('teamPct') };
+      const sumPct = Object.values(pcts).reduce((a,b)=>a+b,0);
+      set('total', money(total));
+      set('paid', money(total*pcts.paid/100));
+      set('content', money(total*pcts.content/100));
+      set('events', money(total*pcts.events/100));
+      set('martech', money(total*pcts.martech/100));
+      set('team', money(total*pcts.team/100));
+      set('allocCheck', sumPct.toFixed(0) + '% ' + (Math.abs(sumPct-100)<0.5 ? '✅ adds up to 100%' : '⚠️ should total 100% — adjust allocations'));
+    
+}
+calculate();
+</script>
+</body>
+</html>
